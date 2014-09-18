@@ -10,16 +10,26 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
+  
+## function will store the original passed matrix to a 
+## global variable and clears the global inverse variable
+  
   set <- function(y) {
     x <<- y
     m <<- NULL
   }
+
 ## get function simply returns the matrix
+  
   get <- function() x
+
 ## function takes the value passed and stores to global variable
+ 
   setsolve <- function(solve) m <<- solve
+
 ## function returns the value of the global variable used to 
 ## store the inverse
+
   getsolve <- function() m
   list(set = set, get = get,
        setsolve = setsolve,
